@@ -1,0 +1,48 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  seo={{
+    title: '404 | Página no encontrada',
+    description: 'La ruta solicitada no existe en Astro UX Lab.',
+    image: '/social-card.svg'
+  }}
+>
+  <main class="container not-found">
+    <article class="glass box" transition:name="not-found">
+      <p>404</p>
+      <h1>Página no encontrada</h1>
+      <p>La URL no existe o fue movida. Puedes volver al inicio o explorar los principios UX.</p>
+      <div class="actions">
+        <a href="/">Inicio</a>
+        <a href="/principles">Principios</a>
+      </div>
+    </article>
+  </main>
+</BaseLayout>
+
+<style>
+  .not-found {
+    min-height: 70vh;
+    display: grid;
+    place-items: center;
+  }
+
+  .box {
+    padding: 1.3rem;
+    max-width: 560px;
+  }
+
+  .actions {
+    display: flex;
+    gap: 0.6rem;
+  }
+
+  .actions a {
+    background: #e9edff;
+    padding: 0.5rem 0.8rem;
+    border-radius: 0.6rem;
+    font-weight: 600;
+  }
+</style>
