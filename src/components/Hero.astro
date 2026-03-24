@@ -1,0 +1,49 @@
+---
+interface Props {
+  title: string;
+  subtitle: string;
+}
+
+const { title, subtitle } = Astro.props;
+---
+
+<section class="hero container">
+  <p class="eyebrow" transition:name="hero-kicker">Astro 2026 · UX Engineering</p>
+  <h1 transition:name="hero-title">{title}</h1>
+  <p class="subtitle" transition:name="hero-subtitle">{subtitle}</p>
+</section>
+
+<style>
+  .hero {
+    text-align: center;
+    padding: 3.4rem 0 2rem;
+    animation: rise 500ms both ease;
+  }
+
+  .eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    font-size: 0.75rem;
+    color: #5e6690;
+    margin: 0;
+  }
+
+  h1 {
+    margin: 0.8rem auto;
+    max-width: 16ch;
+    font-size: clamp(2rem, 5vw, 3.8rem);
+    line-height: 1.1;
+    text-wrap: balance;
+  }
+
+  .subtitle {
+    margin: 0 auto;
+    max-width: 66ch;
+    color: #3f4558;
+  }
+
+  @keyframes rise {
+    from { transform: translateY(14px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+  }
+</style>

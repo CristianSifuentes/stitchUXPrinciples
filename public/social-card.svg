@@ -1,0 +1,7 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#0F172A"/>
+  <circle cx="1014" cy="96" r="220" fill="#4F46E5" fill-opacity="0.35"/>
+  <circle cx="164" cy="552" r="180" fill="#22D3EE" fill-opacity="0.25"/>
+  <text x="84" y="260" fill="white" font-size="72" font-family="Inter, Arial" font-weight="700">Astro UX Lab 2026</text>
+  <text x="84" y="330" fill="#C7D2FE" font-size="40" font-family="Inter, Arial">151 static pages · View Transitions · Typed architecture</text>
+</svg>

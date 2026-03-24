@@ -1,0 +1,74 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import MainNav from '@components/MainNav.astro';
+import Hero from '@components/Hero.astro';
+import PrincipleCard from '@components/PrincipleCard.astro';
+import { featuredPrinciples } from '@data/principles';
+
+const navItems = [
+  { href: '/', label: 'Inicio' },
+  { href: '/principles', label: 'Principios' }
+];
+---
+
+<BaseLayout
+  seo={{
+    title: 'Astro UX Lab 2026 | Landing avanzada',
+    description: 'Landing page en Astro con view transitions, rutas estáticas masivas y arquitectura tipada.',
+    image: '/social-card.svg'
+  }}
+>
+  <MainNav items={navItems} currentPath={Astro.url.pathname} />
+  <Hero
+    title="10 Essential UX Principles + Arquitectura Astro 2026"
+    subtitle="Demo avanzada: componentes tipados, layouts reutilizables, animaciones entre pantallas, y generación estática de 151 páginas dinámicas."
+  />
+
+  <main class="container home-grid">
+    <section class="glass statement" transition:name="intro-panel">
+      <h2>Arquitectura moderna para sitios estáticos potentes</h2>
+      <p>
+        Este proyecto demuestra Astro como framework de alto nivel para contenido, SEO y experiencia visual,
+        combinando rutas dinámicas prerenderizadas, transiciones con nombre y composición estricta con TypeScript.
+      </p>
+      <a class="cta" href="/principles">Explorar 151 principios renderizados en build →</a>
+    </section>
+
+    <section>
+      <h2 class="section-title">Principios destacados</h2>
+      <div class="cards">
+        {featuredPrinciples.slice(0, 6).map((principle) => <PrincipleCard principle={principle} compact />)}
+      </div>
+    </section>
+  </main>
+</BaseLayout>
+
+<style>
+  .home-grid {
+    display: grid;
+    gap: 1rem;
+    margin-bottom: 4rem;
+  }
+
+  .statement {
+    padding: 1.2rem;
+  }
+
+  .statement h2,
+  .section-title {
+    margin: 0 0 0.6rem;
+  }
+
+  .cta {
+    margin-top: 1rem;
+    display: inline-block;
+    font-weight: 700;
+    color: var(--accent);
+  }
+
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 0.8rem;
+  }
+</style>
