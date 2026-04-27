@@ -5,15 +5,15 @@ import PrincipleCard from '@components/PrincipleCard.astro';
 import { principles } from '@data/principles';
 
 const navItems = [
-  { href: '/', label: 'Inicio' },
-  { href: '/principles', label: 'Principios' }
+  { href: '/', label: 'Home' },
+  { href: '/principles', label: 'Principles' }
 ];
 ---
 
 <BaseLayout
   seo={{
-    title: 'Principios UX estáticos | Astro 2026',
-    description: 'Listado de 151 páginas prerenderizadas con navegación animada y arquitectura escalable en Astro.',
+    title: 'Static UX Principles | Astro 2026',
+    description: 'A collection of 151 prerendered pages with animated navigation and scalable Astro architecture.',
     image: '/social-card.svg'
   }}
 >
@@ -21,9 +21,9 @@ const navItems = [
 
   <main class="container listing" transition:name="principles-listing">
     <header>
-      <h1>Biblioteca de principios</h1>
+      <h1>Principles Library</h1>
       <p>
-        Astro prerenderiza <strong>151 rutas estáticas</strong> durante el build para entregar velocidad extrema sin perder navegación dinámica.
+        Astro prerenders <strong>151 static routes</strong> during the build to deliver exceptional speed without giving up dynamic navigation.
       </p>
     </header>
 

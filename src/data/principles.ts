@@ -1,11 +1,11 @@
 import type { Principle } from '@types/principle';
 
 const corePrinciples: Omit<Principle, 'id' | 'slug'>[] = [
-  { title: 'UX es un conjunto de disciplinas', summary: 'Combina investigación, estrategia, arquitectura de información y diseño de interacción.', category: 'strategy', featured: true },
-  { title: 'Sin investigación no hay UX', summary: 'Decide con evidencia y entrevistas en lugar de supuestos internos.', category: 'research', featured: true },
-  { title: 'El contenido también diseña', summary: 'La microcopia y jerarquía visual impactan la comprensión y confianza.', category: 'content', featured: true },
-  { title: 'La accesibilidad no es opcional', summary: 'Diseña para capacidades diversas y cumple estándares inclusivos.', category: 'accessibility', featured: true },
-  { title: 'Prototipa, mide, itera', summary: 'Reduce riesgo de producto validando de forma continua.', category: 'interaction', featured: true }
+  { title: 'UX is a multidisciplinary practice', summary: 'It combines research, strategy, information architecture, and interaction design.', category: 'strategy', featured: true },
+  { title: 'There is no UX without research', summary: 'Make decisions with evidence and user interviews instead of internal assumptions.', category: 'research', featured: true },
+  { title: 'Content shapes the experience', summary: 'Microcopy and visual hierarchy influence comprehension, confidence, and trust.', category: 'content', featured: true },
+  { title: 'Accessibility is not optional', summary: 'Design for diverse abilities and meet inclusive standards from the start.', category: 'accessibility', featured: true },
+  { title: 'Prototype, measure, iterate', summary: 'Reduce product risk by validating ideas continuously.', category: 'interaction', featured: true }
 ];
 
 const categories: Principle['category'][] = ['research', 'content', 'interaction', 'accessibility', 'strategy'];
@@ -17,12 +17,12 @@ export const principles: Principle[] = Array.from({ length: 151 }, (_, index) =>
 
   return {
     id,
-    slug: `principio-${String(id).padStart(3, '0')}`,
-    title: id <= corePrinciples.length ? fromCore.title : `Principio UX #${id}`,
+    slug: `principle-${String(id).padStart(3, '0')}`,
+    title: id <= corePrinciples.length ? fromCore.title : `UX Principle #${id}`,
     summary:
       id <= corePrinciples.length
         ? fromCore.summary
-        : `Principio avanzado ${id} para optimizar performance, conversión y experiencia consistente en productos digitales.`,
+        : `Advanced principle ${id} for improving performance, conversion, and consistent experiences across digital products.`,
     category: categories[index % categories.length],
     featured: id <= 10
   };

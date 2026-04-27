@@ -6,36 +6,36 @@ import PrincipleCard from '@components/PrincipleCard.astro';
 import { featuredPrinciples } from '@data/principles';
 
 const navItems = [
-  { href: '/', label: 'Inicio' },
-  { href: '/principles', label: 'Principios' }
+  { href: '/', label: 'Home' },
+  { href: '/principles', label: 'Principles' }
 ];
 ---
 
 <BaseLayout
   seo={{
-    title: 'Astro UX Lab 2026 | Landing avanzada',
-    description: 'Landing page en Astro con view transitions, rutas estáticas masivas y arquitectura tipada.',
+    title: 'Astro UX Lab 2026 | Advanced Landing Page',
+    description: 'An Astro landing page with view transitions, large-scale static routing, and typed architecture.',
     image: '/social-card.svg'
   }}
 >
   <MainNav items={navItems} currentPath={Astro.url.pathname} />
   <Hero
-    title="10 Essential UX Principles + Arquitectura Astro 2026"
-    subtitle="Demo avanzada: componentes tipados, layouts reutilizables, animaciones entre pantallas, y generación estática de 151 páginas dinámicas."
+    title="10 Essential UX Principles + Astro Architecture 2026"
+    subtitle="An advanced demo with typed components, reusable layouts, animated page transitions, and static generation for 151 dynamic pages."
   />
 
   <main class="container home-grid">
     <section class="glass statement" transition:name="intro-panel">
-      <h2>Arquitectura moderna para sitios estáticos potentes</h2>
+      <h2>Modern architecture for powerful static sites</h2>
       <p>
-        Este proyecto demuestra Astro como framework de alto nivel para contenido, SEO y experiencia visual,
-        combinando rutas dinámicas prerenderizadas, transiciones con nombre y composición estricta con TypeScript.
+        This project demonstrates Astro as a high-level framework for content, SEO, and visual experience,
+        combining prerendered dynamic routes, named transitions, and strict TypeScript composition.
       </p>
-      <a class="cta" href="/principles">Explorar 151 principios renderizados en build →</a>
+      <a class="cta" href="/principles">Explore 151 principles rendered at build time →</a>
     </section>
 
     <section>
-      <h2 class="section-title">Principios destacados</h2>
+      <h2 class="section-title">Featured Principles</h2>
       <div class="cards">
         {featuredPrinciples.slice(0, 6).map((principle) => <PrincipleCard principle={principle} compact />)}
       </div>

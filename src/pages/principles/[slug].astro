@@ -15,8 +15,8 @@ const { principle } = Astro.props;
 const currentSlug = Astro.params.slug;
 
 const navItems = [
-  { href: '/', label: 'Inicio' },
-  { href: '/principles', label: 'Principios' }
+  { href: '/', label: 'Home' },
+  { href: '/principles', label: 'Principles' }
 ];
 ---
 
@@ -30,17 +30,17 @@ const navItems = [
   <MainNav items={navItems} currentPath={'/principles'} />
 
   <main class="container detail" transition:name={`principle-${currentSlug}`}>
-    <a href="/principles" class="back">← Volver al listado</a>
+    <a href="/principles" class="back">← Back to the list</a>
 
     <article class="glass panel">
-      <p class="id">Ruta dinámica: /principles/{currentSlug}</p>
+      <p class="id">Dynamic route: /principles/{currentSlug}</p>
       <h1 transition:name="hero-title">{principle.title}</h1>
       <p class="summary">{principle.summary}</p>
 
       <div class="chips">
         <span class="chip">ID: {principle.id}</span>
-        <span class="chip">Categoría: {principle.category}</span>
-        <span class="chip">Prerender: Sí (build time)</span>
+        <span class="chip">Category: {principle.category}</span>
+        <span class="chip">Prerendered: Yes (build time)</span>
       </div>
     </article>
   </main>

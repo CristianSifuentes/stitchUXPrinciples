@@ -1,5 +1,5 @@
 ---
-import { ViewTransitions } from 'astro:transitions';
+import { ClientRouter } from 'astro:transitions';
 import type { SeoProps } from '@types/principle';
 import '@styles/global.css';
 
@@ -19,7 +19,7 @@ const absoluteImage = new URL(image, Astro.site ?? 'https://stitch-ux-principles
 ---
 
 <!doctype html>
-<html lang="es">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
@@ -34,8 +34,8 @@ const absoluteImage = new URL(image, Astro.site ?? 'https://stitch-ux-principles
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={absoluteImage} />
-    <!-- ViewTransitions enables animated navigation + transition names between pages. -->
-    <ViewTransitions />
+    <!-- ClientRouter enables animated navigation + transition names between pages. -->
+    <ClientRouter />
   </head>
   <body>
     <slot />
